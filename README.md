@@ -4,28 +4,26 @@ This repository contains the `PKGBUILD` to build and install the latest developm
 
 ## Installation
 
-### 1. Manual Build
-
-Clone this repository and use the `makepkg` command to build and install the package.
+To install this package, clone this repository and use the `makepkg` command. This will automatically download the latest source code from GitHub, resolve the internal build process, and install the package on your system.
 
 ```bash
+# 1. Clone this repository
 git clone https://github.com/ktkr3d/jellyfin-mpv-shim-git.git
+
+# 2. Move into the directory
 cd jellyfin-mpv-shim-git
+
+# 3. Build and install the package (resolves dependencies automatically via pacman)
 makepkg -si
-```
-
-### 2. Using AUR Helpers (yay / paru)
-
-You can also install it directly by passing the GitHub repository URL to your preferred AUR helper.
-
-```bash
-# Using yay
-yay -S git+https://github.com/ktkr3d/jellyfin-mpv-shim-git.git
-
-# Using paru
-paru -S git+https://github.com/ktkr3d/jellyfin-mpv-shim-git.git
 ```
 
 ## Prerequisites
 
-Before building, make sure you have the required AUR dependency packages (such as `python-mpv-jsonipc`) installed on your system.
+Before running `makepkg -si`, make sure you have the required AUR dependency packages installed on your system.
+
+If any dependencies are missing from the official repositories, you will need to install them beforehand using your preferred AUR helper (e.g., `yay` or `paru`):
+
+```bash
+# Example: Installing required AUR dependencies if missing
+yay -S python-mpv-jsonipc
+```
